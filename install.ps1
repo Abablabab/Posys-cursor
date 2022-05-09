@@ -28,6 +28,7 @@ $regParts = @(
 $regString = $regParts -join ','
 
 # Install the theme into the registry, so it can be selected from the 'themes -> cursor' settings menu
+New-Item -Path 'HKCU:\Control Panel\Cursors' -Name Schemes -ErrorAction Ignore
 Remove-ItemProperty -Path 'HKCU:\Control Panel\Cursors\Schemes' -Name 'Posy' -ErrorAction Ignore
 New-ItemProperty `
     -Path 'HKCU:\Control Panel\Cursors\Schemes' `
